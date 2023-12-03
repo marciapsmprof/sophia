@@ -1,0 +1,163 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#conteiner {
+  display: flex;
+  height: 100vh;
+  margin-left: 2%;
+  border: 1px solid red;
+  background-image: url(../imagens/arvores.jpeg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  flex-direction: column;
+  justify-items: center;
+}
+#linha1,
+#linha2,
+#linha3 {
+  margin-top: 1vw;
+  margin-left: 10vw;
+  display: flex;
+  max-width: 80vw;
+  min-height: 10vh;
+  /*border: 4px solid rgb(238, 255, 0);*/
+  flex-direction: row;
+}
+#linha1 {
+  justify-content: space-between;
+  max-width: 60vw;
+  margin-top: 250px;
+  margin-left: 15vw;
+}
+#linha2,
+#linha3 {
+  justify-content: center;
+  max-width: 60vw;
+  height: 15vh;
+  margin-top: 20vh;
+  margin-left: 15vw;
+}
+#linha3 {
+  justify-content: space-around;
+  margin-top: 15vh;
+}
+.caixa-individual {
+  height: 12vh;
+  width: 150px;
+  
+  background-color: rgb(185, 168, 36);
+}
+.caixa-par {
+  width: 10vw;
+  height: 12vh;
+  background-color: rgb(185, 20, 20);
+  margin-right: 5vw;
+}
+.oculto {
+  display: none;
+}
+#modal,#modalPassaro,#modalLagartixa, #modalPassaro2 {
+  display: none;
+   position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+ /* align-items: center;*/
+}
+
+#videoModal, #videoModal1, #videoModal2, #videoModal3 {
+  width: 100%;
+  max-width: 800px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  margin: auto;
+}
+
+#fecharModal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.fecharVideoBtn {
+  display: block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/*MODAL PARA IMAGEM*/
+.modal-content {
+  position: relative;
+}
+
+/*.modal-content > iframe,*/
+.modal-content > img {
+  width: 100%;
+  height: 100%;
+  max-height: 500px;
+}
+
+/* Estilo para a nova modal com a imagem */
+#novaModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+#novaModal-content {
+  position: relative;
+  text-align: center;
+}
+
+#fecharNovaModal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #fff;
+}
+
+#novaModalImg {
+  max-width: 80%;
+  max-height: 80%;
+}
+
+#modal-passaro-arvore{
+  display: none;
+}
+
+/*MODAL PASSARO-ARVORE*/
+
+
+#modalPassaro{
+  display: none;
+}
+#btnRecarregar{
+  width: 10vw;
+  height: auto;
+  color: #fff;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  background-color: #58aa78
+}

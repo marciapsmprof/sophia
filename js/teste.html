@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Arrastar e Soltar</title>
+   <style>
+      .caixa-individual {
+         width: 300px;
+         height: 300px;
+         border: 2px dashed #ccc;
+         margin: 20px;
+         padding: 10px;
+      }
+
+      img {
+         width: 100px;
+         height: 100px;
+      }
+
+      .oculto {
+         display: none;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="caixa-individual" id="caixaDestino1" ondrop="soltar(event)" ondragover="permitirSoltar(event)">
+      <!-- A imagem que você quer arrastar -->
+      <img id="passaro" src="caminho/para/sua/imagem.jpg" draggable="true" alt="Passaro">
+   </div>
+
+   <div class="caixa-individual" id="caixaDestino2" ondrop="soltar(event)" ondragover="permitirSoltar(event)">
+      <!-- Outra caixa onde a imagem pode ser arrastada -->
+   </div>
+
+   <script>
+      document.addEventListener('DOMContentLoaded', function () {
+         var passaro = document.getElementById('passaro');
+         var caixaDestino1 = document.getElementById('caixaDestino1');
+         var caixaDestino2 = document.getElementById('caixaDestino2');
+
+         // Armazena a posição inicial do passaro
+         var posicaoInicial = { x: 0, y: 0 };
+
+         passaro.addEventListener('dragstart', iniciarArraste);
+
+         // Função chamada ao iniciar o arraste da imagem
+         function iniciarArraste(event) {
+            // Define a transferência de dados como o ID da imagem
+            event.dataTransfer.setData('text', event.target.id);
+
+            // Armazena a posição inicial
+            posicaoInicial.x = event.clientX;
+            posicaoInicial.y = event.clientY;
+         }
+
+         // Função chamada quando a imagem é solta na caixa
+         function soltar(event) {
+            // Impede o comportamento padrão de abrir a imagem em uma nova aba
+            event.preventDefault();
+
+            // Obtém o ID da imagem que está sendo arrastada
+            var idImagem = event.dataTransfer.getData('text');
+
+            // Obtém a referência à imagem pelo ID
+            var imagem = document.getElementById(idImagem);
+
+            // Verifica qual é a caixa de destino
+            if (event.target === caixaDestino1) {
+               // Adiciona a imagem à caixa de destino 1
+               event.target.appendChild(imagem);
+
+               // Oculta a caixa de destino 2
+               caixaDestino2.classList.add('oculto');
+            } else if (event.target === caixaDestino2) {
+               // Adiciona a imagem à caixa de destino 2
+               event.target.appendChild(imagem);
+
+               // Oculta a caixa de destino 1
+               caixaDestino1.classList.add('oculto');
+            }
+
+            // Reseta a posição do passaro
+            resetarPosicao();
+         }
+
+         // Função chamada para permitir o soltar na caixa
+         function permitirSoltar(event) {
+            // Impede o comportamento padrão de não permitir o soltar
+            event.preventDefault();
+         }
+
+         // Função para resetar a posição do passaro
+         function resetarPosicao() {
+            passaro.style.position = 'relative';
+            passaro.style.left = '0';
+            passaro.style.top = '0';
+         }
+      });
+   </script>
+</body>
+
+</html>

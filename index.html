@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/estilos.css">
+   <title>Arrastar</title>
+</head>
+
+<body>
+  
+   <div id="conteiner">
+      <div id="linha1">
+         <div class="caixa-individual" id="caixa-destino">
+
+         </div>
+         <div class="caixa-individual" id="caixa-destino2">
+
+         </div>
+      </div>
+      <div id="linha2">
+         <div class="caixa-par" id="caixa-par1">
+
+         </div>
+         <div class="caixa-par" id="caixa-par2">
+
+         </div>
+      </div>
+      <div id="linha3">
+         <div id="caixa3">
+            <img src="imagens/bird.png" alt="figura de um pássaro azul" id="passaro" draggable="true">
+
+         </div>
+         <div id="caixa4">
+            <img src="imagens/lagarta.png" alt="figura de uma lagarta verde" id="lagarta" draggable="true">
+         </div>
+      </div>
+      <!--área do vídeo-->
+      <div id="modal">
+         <div id="videoModal" class="modal">
+            <div class="modal-content">
+               
+               <!-- Substitua 'SEU_VIDEO_ID' pelo ID real do seu vídeo do YouTube -->
+               <iframe width="100%" height="400" src="https://www.youtube.com/embed/Ee5C8tQ6x5c?si=l_L1BtvLkj8kLKnM"
+                  title="YouTube video player" frameborder="0" allowfullscreen muted="true" controls="false"></iframe>
+               <button class="fecharVideoBtn" onclick="fecharModal()">Fechar Vídeo</button>
+            </div>
+         </div>
+      </div>
+
+      <!--MODAL PASSARO-ARVORE-->
+      <div id="modalPassaro">
+         <div id="videoModal1" class="modal">
+            <div class="modal-content">
+             
+               <iframe width="100%" height="400" src="https://www.youtube.com/embed/yVztu_bETRo" title="YouTube video player" frameborder="0" 
+                  allowfullscreen muted="true" controls="false"></iframe>
+               <button onclick="fecharModal('modalPassaro')" class="fecharVideoBtn" id="btnPassaro">Fechar</button>
+            </div>
+         </div>
+      </div>
+
+      <!--MODAL PASSARO-ARVORE2-->
+      <div id="modalPassaro2">
+         <div id="videoModal3" class="modal">
+            <div class="modal-content">
+              
+               <iframe width="100%" height="400" src="https://www.youtube.com/embed/jXCG8Xz2B3g?si=Kh0Ohj0faQgf6ilm" title="YouTube video player"
+                  frameborder="0" allowfullscreen muted="true" controls="false"></iframe>
+               <button onclick="fecharModal('modalPassaro2')" class="fecharVideoBtn" id="btnPassaro2">Fechar</button>
+            </div>
+         </div>
+      </div>
+
+      <!--MODAL LAGARTIXA-ARVORE-->
+      <div id="modalLagartixa">
+         <div id="videoModal2" class="modal">
+            <div class="modal-content">
+              
+               <iframe width="100%" height="400" src="https://www.youtube.com/embed/RityhFl49cU?si=s2sjkxYWRnEkP17b" title="YouTube video player"
+                  frameborder="0" allowfullscreen muted="true" controls="false"></iframe>
+               <button onclick="fecharModal('modalLagartixa')" class="fecharVideoBtn" id="btnLagartixa">Fechar</button>
+            </div>
+         </div>
+      </div>
+
+      
+
+
+      <!--MODAL IMAGEM-->
+      <!-- Nova modal com imagem -->
+      <div id="novaModal">
+         <div id="novaModal-content">
+            
+            <img id="novaModalImg" src="imagens/passaro_lagarta.jpeg"
+               alt="figura com o texto para relação do pássaro com a lagarta">
+               <button id="btnRecarregar" >Recarregar Página</button>
+         </div>
+         
+      </div>
+
+   </div>
+   <!-- Inclua a API do YouTube antes do seu script externo bio.js -->
+   <script src="https://www.youtube.com/iframe_api"></script>
+   <script src="js/script.js">  </script>
+</body>
+
+</html>
